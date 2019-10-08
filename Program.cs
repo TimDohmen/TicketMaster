@@ -1,12 +1,13 @@
 ﻿using System;
+using ticketmaster.Controllers;
 
 namespace ticketmaster
 {
-    class Program
+  class TicketMaster
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+      new TicketController().Run();
     }
+  }
 }

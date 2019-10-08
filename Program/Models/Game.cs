@@ -5,6 +5,7 @@ namespace ticketmaster.Models
   public class Game : IGame
   {
     public ITicket Ticket { get; set; }
+    public TicketSystem Box { get; set; }
 
     private void Setup()
     {
@@ -12,7 +13,6 @@ namespace ticketmaster.Models
     }
     public Game()
     {
-      Ticket = new Ticket();
       Setup();
     }
   }

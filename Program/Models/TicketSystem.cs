@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using ticketmaster.Interfaces;
+using ticketmaster.Models;
 
-namespace ticketmaster.Program.Models
+namespace ticketmaster.Models
 {
   public class TicketSystem : ITicketSystem
   {
@@ -16,9 +18,12 @@ namespace ticketmaster.Program.Models
     {
       //view individual ticket, take in index to know what ticket to view details
     }
-    void NewTicket()
+    public void NewTicket(string name, string desc)
     {
       //create
+
+      Ticket newTicket = new Ticket(name, desc);
+      Tickets.Add(newTicket);
     }
     void CloseTicket()
     {
