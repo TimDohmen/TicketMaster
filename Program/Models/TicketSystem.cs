@@ -7,7 +7,7 @@ namespace ticketmaster.Program.Models
   {
 
 
-    public List<ITicket> info { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public List<ITicket> Tickets { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     void PrintAll()
     {
       //print all tickets in log
@@ -25,9 +25,9 @@ namespace ticketmaster.Program.Models
       //dete
     }
 
-    public TicketSystem(List<ITicket> info)
+    public TicketSystem(List<ITicket> Tickets)
     {
-      info = new List<ITicket>();
+      Tickets = new List<ITicket>();
     }
   }
 }

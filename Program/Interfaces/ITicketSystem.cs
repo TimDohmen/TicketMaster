@@ -5,7 +5,7 @@ namespace ticketmaster.Interfaces
   public interface ITicketSystem
   {
 
-    List<ITicket> info { get; set; }
+    List<ITicket> Tickets { get; set; }
 
     void PrintAll()
     {
