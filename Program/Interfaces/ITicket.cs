@@ -1,9 +1,14 @@
 namespace ticketmaster.Interfaces
 {
-  public class ITicket
+  public interface ITicket
   {
-    public string Name { get; set; }
-    public string Description { get; set; }
+    string Name { get; }
+    string Description { get; set; }
+
+    void Print()
+    {
+
+    }
 
     string GetTemplate();
 

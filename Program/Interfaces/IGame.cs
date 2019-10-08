@@ -1,6 +1,6 @@
-namespace ticketmaster.Program.Interfaces
+namespace ticketmaster.Interfaces
 {
-  public class IGame
+  public interface IGame
   {
     ITicket Ticket { get; set; }
   }
