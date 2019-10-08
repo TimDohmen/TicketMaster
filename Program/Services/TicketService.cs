@@ -11,12 +11,16 @@ namespace ticketmaster.Services
 
     public void Select(int num)
     {
-
+      Messages.Add(_game.Ticket.GetTemplate());
     }
     public void addTicketDetails(string name, string desc)
     {
       _game.Box.NewTicket(name, desc);
 
+    }
+    public void Update()
+    {
+      _game.Box.PrintAll();
     }
     public TicketService()
     {

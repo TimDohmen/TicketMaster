@@ -8,11 +8,16 @@ namespace ticketmaster.Models
   public class TicketSystem : ITicketSystem
   {
 
+    public List<string> Messages { get; set; }
 
-    public List<ITicket> Tickets { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    void PrintAll()
+    public List<ITicket> Tickets { get; set; }
+    public void PrintAll()
     {
       //print all tickets in log
+      foreach (var t in Tickets)
+      {
+        Messages.Add($"{t.Name}");
+      }
     }
     void ViewTicket(int index)
     {
@@ -30,9 +35,10 @@ namespace ticketmaster.Models
       //dete
     }
 
-    public TicketSystem(List<ITicket> Tickets)
+    public TicketSystem()
     {
       Tickets = new List<ITicket>();
+      Messages = new List<string>();
     }
   }
 }

@@ -42,10 +42,10 @@ namespace ticketmaster.Controllers
           string desc = Console.ReadLine();
           _ts.addTicketDetails(name, desc);
           break;
-
-
-        default:
-          if (int.TryParse(choice, out int index))
+        case "view":
+          _ts.Update();
+          string view = Console.ReadLine();
+          if (int.TryParse(view, out int index))
           {
             _ts.Select(index);
             break;
@@ -55,11 +55,14 @@ namespace ticketmaster.Controllers
             System.Console.WriteLine("Infidels Bad Key");
           }
           break;
+        default:
+          break;
       }
     }
 
     private void Update()
     {
+      Console.ReadLine();
       Console.Clear();
       System.Console.WriteLine("What You wanna Do? View / New / Quit");
     }
