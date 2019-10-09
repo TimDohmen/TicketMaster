@@ -41,9 +41,10 @@ namespace ticketmaster.Models
       Ticket newTicket = new Ticket(name, desc);
       Tickets.Add(newTicket);
     }
-    void CloseTicket()
+    public void CloseTicket(int num)
     {
-      //dete
+      ITicket T = Tickets[num];
+      Tickets.Remove(T);
     }
 
     public TicketSystem()

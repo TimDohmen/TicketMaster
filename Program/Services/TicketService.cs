@@ -23,6 +23,11 @@ namespace ticketmaster.Services
     {
       _game.Box.PrintAll();
     }
+
+    public void Delete(int num)
+    {
+      _game.Box.CloseTicket(num - 1);
+    }
     public TicketService()
     {
       Messages = new List<string>();

@@ -11,7 +11,6 @@ namespace ticketmaster.Controllers
     {
       while (true)
       {
-        Update();
         GetUserInput();
       }
     }
@@ -19,13 +18,20 @@ namespace ticketmaster.Controllers
     private void GetUserInput()
     {
       Console.Clear();
+
+
+
       Console.WriteLine($@"
       Welcome to Ticket Masta
-  #                Ticket Name
-      -   -   -   -   -
-      ");
-      System.Console.WriteLine("What You wanna Do? View / New / Quit");
 
+       -   -   -   -   -   -
+      ");
+      System.Console.WriteLine($@"
+What what you like to do?
+      Input: 
+    New - to create a new ticket
+    View - to view a created ticket
+    Quit");
       string choice = Console.ReadLine().ToLower();
       switch (choice)
       {
@@ -41,6 +47,7 @@ namespace ticketmaster.Controllers
           System.Console.WriteLine("Ticket Description : ");
           string desc = Console.ReadLine();
           _ts.addTicketDetails(name, desc);
+          System.Console.WriteLine("Ticket Created! - Go to view to access tickets");
           break;
         case "view":
           Update();
@@ -48,17 +55,36 @@ namespace ticketmaster.Controllers
           string view = Console.ReadLine();
           if (int.TryParse(view, out int index))
           {
+
             _ts.Select(index);
-            break;
+            System.Console.WriteLine($@"
+Press Enter to return to main menu or D to Delete Ticket");
+            string anotherChoice = Console.ReadLine();
+
+
+            switch (anotherChoice)
+            {
+              case "d":
+              case "delete":
+                _ts.Delete(index);
+                System.Console.WriteLine("Ticket Deleted!");
+                break;
+              case "q":
+                break;
+            }
           }
           else
           {
             System.Console.WriteLine("Infidels Bad Key :(");
           }
+
           break;
         default:
+          System.Console.WriteLine("Read Directions");
           break;
+
       }
+      Update();
     }
 
     private void Update()
@@ -70,7 +96,7 @@ namespace ticketmaster.Controllers
         Console.WriteLine(message);
       }
 
-      System.Console.WriteLine("What You wanna Do? View / New / Quit");
+      System.Console.WriteLine("Q to return to previous menu or num to select ticket.");
     }
   }
 }

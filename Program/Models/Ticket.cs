@@ -13,8 +13,10 @@ namespace ticketmaster.Models
     public string GetTemplate()
     {
       return $@"
-  {Name}
-  {Description}";
+  Task Name: {Name}
+       Desc: {Description}
+";
+
 
     }
     public Ticket(string name, string description)
