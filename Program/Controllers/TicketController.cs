@@ -43,8 +43,8 @@ namespace ticketmaster.Controllers
           _ts.addTicketDetails(name, desc);
           break;
         case "view":
-          _ts.Update();
           Update();
+          _ts.Update();
           string view = Console.ReadLine();
           if (int.TryParse(view, out int index))
           {
@@ -53,7 +53,7 @@ namespace ticketmaster.Controllers
           }
           else
           {
-            System.Console.WriteLine("Infidels Bad Key");
+            System.Console.WriteLine("Infidels Bad Key :(");
           }
           break;
         default:

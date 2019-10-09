@@ -28,9 +28,11 @@ namespace ticketmaster.Models
 
       }
     }
-    void ViewTicket(int index)
+    public void ViewTicket(int index)
     {
       //view individual ticket, take in index to know what ticket to view details
+      Console.WriteLine($"{Tickets[index].GetTemplate()}");
+
     }
     public void NewTicket(string name, string desc)
     {

@@ -11,7 +11,8 @@ namespace ticketmaster.Services
 
     public void Select(int num)
     {
-      Messages.Add(_game.Ticket.GetTemplate());
+      // Messages.Add(_game.Ticket.GetTemplate());
+      _game.Box.ViewTicket(num - 1);
     }
     public void addTicketDetails(string name, string desc)
     {
