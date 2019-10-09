@@ -44,6 +44,7 @@ namespace ticketmaster.Controllers
           break;
         case "view":
           _ts.Update();
+          Update();
           string view = Console.ReadLine();
           if (int.TryParse(view, out int index))
           {
@@ -64,6 +65,11 @@ namespace ticketmaster.Controllers
     {
       Console.ReadLine();
       Console.Clear();
+      foreach (string message in _ts.Messages)
+      {
+        Console.WriteLine(message);
+      }
+
       System.Console.WriteLine("What You wanna Do? View / New / Quit");
     }
   }

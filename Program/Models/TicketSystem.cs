@@ -14,9 +14,18 @@ namespace ticketmaster.Models
     public void PrintAll()
     {
       //print all tickets in log
-      foreach (var t in Tickets)
+      // foreach (var t in Tickets)
+      // {
+      //   //cant add to messages need to fix
+      //   // Messages.Add($"{t.Name}");
+      //   Console.WriteLine($" {t.Name}");
+
+      // }
+      for (int i = 0; i < Tickets.Count; i++)
       {
-        Messages.Add($"{t.Name}");
+        ITicket T = Tickets[i];
+        Console.WriteLine($"{i + 1}.    {T.Name}");
+
       }
     }
     void ViewTicket(int index)

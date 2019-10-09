@@ -23,6 +23,7 @@ namespace ticketmaster.Models
       Description = description;
 
     }
+
   }
 
 }

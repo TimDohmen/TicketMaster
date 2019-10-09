@@ -5,10 +5,7 @@ namespace ticketmaster.Interfaces
     string Name { get; }
     string Description { get; set; }
 
-    void Print()
-    {
 
-    }
 
     string GetTemplate();
 

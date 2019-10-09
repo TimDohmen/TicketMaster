@@ -7,14 +7,10 @@ namespace ticketmaster.Models
     public Ticket Ticket { get; set; }
     public TicketSystem Box { get; set; }
 
-    private void Setup()
-    {
 
-    }
     public Game()
     {
       Box = new TicketSystem();
-      Setup();
     }
   }
 }
